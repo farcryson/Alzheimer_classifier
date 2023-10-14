@@ -1,6 +1,5 @@
 import streamlit as st
 import tensorflow as tf
-import cv2
 from PIL import Image, ImageOps
 import numpy as np
 
@@ -27,7 +26,7 @@ if file is None:
 else:
     prediction = upload_predict(file, model)
     img = tf.keras.preprocessing.image.load_img(file)
-    st.image(img, width = 300)
+    st.image(img, width = 300)  
     if str(prediction[0] == 0):
         image_class = "MildDemented"
     elif str(prediction[0] == 0):
