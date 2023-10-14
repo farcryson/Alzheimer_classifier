@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 absl-py==2.0.0
 altair==5.1.2
 astunparse==1.6.3
@@ -81,3 +82,6 @@ watchdog==3.0.0
 Werkzeug==3.0.0
 wrapt==1.14.1
 zipp==3.17.0
+=======
+tensorflow==2.12.0
+>>>>>>> 909ee1ab0275bbd9241d8bb224fd04483db50857
