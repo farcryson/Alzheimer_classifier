@@ -4,22 +4,19 @@ import cv2
 from PIL import Image, ImageOps
 import numpy as np
 
-@st.cache(allow_output_mutation = True)
+@st.cache_data(allow_output_mutation = True)
 def load_model():
     model = tf.keras.models.load_model('model.hdf5')
     return model
 with st.spinner('Model is being loaded...'):
     model = load_model()
-st.write("""
-        #Alzheimer's Classification
-        """
-        )
+st.title("Alzheimer's Classification")
 file = st.file_uploader("Upload the image", type = ["jpg", "png"])
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
 def upload_predict(upload_image, model):
     size = (180, 180)
-    image = ImageOps.fit(upload_image, size, Image.ANTIALIAS)
+    image = ImageOps.fit(upload_image, size)
     image = np.asarray(image)
     imgage = cv2.resize(image, dsize = (32, 32, 3))
     
